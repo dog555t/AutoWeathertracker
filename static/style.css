@@ -1,0 +1,250 @@
+/* In-Car AQI Monitor Styles */
+
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --card-bg: #2a2a2a;
+    --border-radius: 15px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: var(--text-color);
+    min-height: 100vh;
+    padding: 10px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    padding: 20px 10px;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+#last-update {
+    font-size: 0.9em;
+    color: #aaaaaa;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* AQI Display - Large and prominent */
+.aqi-display {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: background-color 0.5s ease;
+}
+
+.aqi-value {
+    font-size: 8em;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.aqi-category {
+    font-size: 2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* PM Values */
+.pm-values {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.pm-box {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.pm-label {
+    font-size: 1.2em;
+    color: #aaaaaa;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.pm-value {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Info Box */
+.info-box {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--shadow);
+}
+
+.info-section {
+    margin-bottom: 20px;
+}
+
+.info-section:last-child {
+    margin-bottom: 0;
+}
+
+.info-section h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #aaaaaa;
+}
+
+.info-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+/* Chart Container */
+.chart-container {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--shadow);
+}
+
+.chart-container h3 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #aaaaaa;
+    text-align: center;
+}
+
+#aqi-chart {
+    max-height: 250px;
+}
+
+/* Status Footer */
+.status-footer {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 15px 25px;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    color: #aaaaaa;
+}
+
+#connection-status {
+    font-size: 1.5em;
+    color: #00ff00;
+    animation: pulse 2s infinite;
+}
+
+#connection-status.disconnected {
+    color: #ff0000;
+    animation: none;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .aqi-value {
+        font-size: 6em;
+    }
+
+    .aqi-category {
+        font-size: 1.5em;
+    }
+
+    .pm-value {
+        font-size: 2em;
+    }
+
+    .pm-values {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Loading animation */
+.loading {
+    opacity: 0.5;
+    animation: fade 1s infinite;
+}
+
+@keyframes fade {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* AQI Color Classes */
+.aqi-good {
+    background: linear-gradient(135deg, #00a651 0%, #00e400 100%);
+}
+
+.aqi-moderate {
+    background: linear-gradient(135deg, #d4a900 0%, #ffff00 100%);
+}
+
+.aqi-usg {
+    background: linear-gradient(135deg, #d46200 0%, #ff7e00 100%);
+}
+
+.aqi-unhealthy {
+    background: linear-gradient(135deg, #d40000 0%, #ff0000 100%);
+}
+
+.aqi-very-unhealthy {
+    background: linear-gradient(135deg, #6e2875 0%, #8f3f97 100%);
+}
+
+.aqi-hazardous {
+    background: linear-gradient(135deg, #5a0018 0%, #7e0023 100%);
+}
