@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In-Car AQI Monitor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚗 In-Car Air Quality Monitor</h1>
+            <div id="last-update">Connecting...</div>
+        </header>
+
+        <main>
+            <!-- Main AQI Display -->
+            <div class="aqi-display" id="aqi-display">
+                <div class="aqi-value" id="aqi-value">--</div>
+                <div class="aqi-category" id="aqi-category">Loading...</div>
+            </div>
+
+            <!-- PM Values -->
+            <div class="pm-values">
+                <div class="pm-box">
+                    <div class="pm-label">PM2.5</div>
+                    <div class="pm-value" id="pm25-value">-- µg/m³</div>
+                </div>
+                <div class="pm-box">
+                    <div class="pm-label">PM10</div>
+                    <div class="pm-value" id="pm10-value">-- µg/m³</div>
+                </div>
+            </div>
+
+            <!-- Description and Recommendation -->
+            <div class="info-box">
+                <div class="info-section">
+                    <h3>Description</h3>
+                    <p id="description">Waiting for data...</p>
+                </div>
+                <div class="info-section">
+                    <h3>Recommendation</h3>
+                    <p id="recommendation">Waiting for data...</p>
+                </div>
+            </div>
+
+            <!-- History Chart -->
+            <div class="chart-container">
+                <h3>AQI History (Last Hour)</h3>
+                <canvas id="aqi-chart"></canvas>
+            </div>
+
+            <!-- Status Footer -->
+            <div class="status-footer">
+                <span id="sensor-status">Sensor: Initializing...</span>
+                <span id="connection-status">●</span>
+            </div>
+        </main>
+    </div>
+
+    <!-- Include Chart.js from CDN (optional - app works without it) -->
+    <!-- For fully offline operation, download chart.min.js and serve it from /static/ -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
