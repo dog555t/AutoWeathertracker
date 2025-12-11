@@ -3,7 +3,8 @@
 Sensor Reader Module for Air Quality Monitoring
 
 This module handles reading data from particulate matter sensors.
-Supports PMS5003/PMS7003 sensors over UART and SDS011 sensors.
+Currently implements support for PMS5003/PMS7003 sensors over UART.
+Can be extended to support other sensors (SDS011, I2C sensors, etc.)
 
 Wiring for PMS5003/PMS7003 (UART):
 - VCC -> 5V (Pin 2 or 4)

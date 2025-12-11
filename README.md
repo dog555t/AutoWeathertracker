@@ -22,10 +22,10 @@ An automatic air quality monitoring system for your car using a Raspberry Pi. Th
    - Raspberry Pi 3B+ also works well
    - Raspberry Pi Zero 2 W can work but may be slower
 
-2. **Air Quality Sensor** (Choose one):
-   - **PMS5003** or **PMS7003** (Recommended, UART interface)
-   - **SDS011** (Alternative, UART interface)
-   - Any I2C particulate matter sensor (requires code adaptation)
+2. **Air Quality Sensor**:
+   - **PMS5003** or **PMS7003** (Recommended and fully supported, UART interface)
+   - Other UART sensors like SDS011 can be added with code modifications
+   - I2C particulate matter sensors can be supported with code adaptation
 
 3. **Power Supply**:
    - Official Raspberry Pi power supply (5V 3A for Pi 4, 5V 2.5A for Pi 3)

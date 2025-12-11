@@ -69,6 +69,7 @@ function updatePMValues(data) {
     const pm10Value = document.getElementById('pm10-value');
     
     pm25Value.textContent = data.pm25 !== undefined ? `${data.pm25} µg/m³` : '-- µg/m³';
+    // Note: API returns 'pm100' which represents PM10 particles (10µm diameter)
     pm10Value.textContent = data.pm100 !== undefined ? `${data.pm100} µg/m³` : '-- µg/m³';
 }
 

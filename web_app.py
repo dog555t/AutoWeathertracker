@@ -71,8 +71,9 @@ def get_current():
         }), 503
     
     # Calculate AQI
+    # Note: Sensor uses 'pm100' to represent PM10 particles (10µm diameter)
     pm25 = reading.get('pm25', 0)
-    pm100 = reading.get('pm100', 0)
+    pm100 = reading.get('pm100', 0)  # PM10 particles
     aqi_result = AQICalculator.calculate_aqi(pm25=pm25, pm10=pm100)
     
     # Build response
@@ -116,7 +117,7 @@ def get_history():
     history_with_aqi = []
     for reading in history:
         pm25 = reading.get('pm25', 0)
-        pm100 = reading.get('pm100', 0)
+        pm100 = reading.get('pm100', 0)  # PM10 particles
         aqi_result = AQICalculator.calculate_aqi(pm25=pm25, pm10=pm100)
         
         history_with_aqi.append({

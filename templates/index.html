@@ -58,7 +58,8 @@
         </main>
     </div>
 
-    <!-- Include Chart.js from CDN -->
+    <!-- Include Chart.js from CDN (optional - app works without it) -->
+    <!-- For fully offline operation, download chart.min.js and serve it from /static/ -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
