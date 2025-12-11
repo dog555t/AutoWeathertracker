@@ -1,14 +1,14 @@
 # In-Car AQI Monitor - Python Dependencies
 
 # Web framework
-Flask==2.3.3
-Werkzeug==2.3.7
+Flask==3.0.0
+Werkzeug==3.0.3
 
 # Serial communication for sensors
 pyserial==3.5
 
 # I2C support (for alternative sensors)
-smbus2==0.4.2
+smbus2==0.4.3
 
 # Utilities
 python-dateutil==2.8.2
